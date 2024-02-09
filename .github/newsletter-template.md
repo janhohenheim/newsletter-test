@@ -3,7 +3,7 @@ title: "N{{ env.NEWSLETTER_COUNTER}}: {{ env.NEWSLETTER_MONTH }} {{ env.NEWSLETT
 labels: coordination, help wanted
 ---
 
-# N{{ env.NEWSLETTER_COUNTER}}: This Month in Rust GameDev {{ env.NEWSLETTER_DATE }}
+# Newsletter {{ env.NEWSLETTER_COUNTER}}: {{ env.NEWSLETTER_MONTH }} {{ env.NEWSLETTER_YEAR }}
 
 ###### tags: `newsletter`
 
