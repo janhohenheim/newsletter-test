@@ -1,7 +1,7 @@
 name: Create Newsletter Tracking Issue
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/1 * * * *"
 
 permissions:
   contents: read
