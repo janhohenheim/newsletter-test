@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Set template variables
-        run: |
-        echo "NEWSLETTER_DATE=$(date +'%B %Y')" >> $GITHUB_ENV
-        echo "NEWSLETTER_DEADLINE=$(date -d' 1 month ' '+%m.%Y')" >> $GITHUB_ENV
+      - name: Set newsletter date
+        run: echo "NEWSLETTER_DATE=$(date +'%B %Y')" >> $GITHUB_ENV
+      - name: Set newsletter deadline
+        run: echo "NEWSLETTER_DEADLINE=$(date -d' 1 month ' '+%m.%Y')" >> $GITHUB_ENV
       - name: Create tracking issue
         uses: JasonEtco/create-an-issue@v2
         env:
