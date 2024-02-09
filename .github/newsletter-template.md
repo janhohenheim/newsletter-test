@@ -7,7 +7,7 @@ labels: coordination, help wanted
 
 ###### tags: `newsletter`
 
-**Editors:** @ozkriff, @scirin, @AngelOnFira
+**Editors:**
 
 Another month has gone by, so it's time to put together the Rust Gamedev newsletter with August's news!
 
