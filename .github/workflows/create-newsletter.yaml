@@ -4,8 +4,6 @@ on:
     - cron: "*/1 * * * *"
   workflow_dispatch:
     inputs: {}
-environment:
-  name: newsletter
 permissions:
   contents: read
   issues: write 
