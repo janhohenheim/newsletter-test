@@ -2,7 +2,10 @@ name: Create Newsletter Tracking Issue
 on:
   schedule:
     - cron: "*/1 * * * *"
-
+  workflow_dispatch:
+    inputs: {}
+environment:
+  name: newsletter
 permissions:
   contents: read
   issues: write 
@@ -15,7 +18,7 @@ jobs:
         uses:  MandalAutomations/Increment-Environment-Variable@v1
         with:
           Name: "NEWSLETTER_NUMBER"
-          EnvironmentName: "default"
+          EnvironmentName: "newsletter"
           RepoId: ${{ github.repository_id }}
           Token: ${{ secrets.PAT_TOKEN }}
       - name: Set date
