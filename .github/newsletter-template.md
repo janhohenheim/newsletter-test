@@ -1,5 +1,5 @@
 ---
-title: N{{ env.NEWSLETTER_COUNTER}}: This Month in Rust GameDev {{ env.NEWSLETTER_MONTH }} {{ env.NEWSLETTER_YEAR }}
+title: "N{{ env.NEWSLETTER_COUNTER}}: This Month in Rust GameDev {{ env.NEWSLETTER_MONTH }} {{ env.NEWSLETTER_YEAR }}"
 labels: coordination, help wanted
 ---
 
