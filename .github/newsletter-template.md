@@ -1,19 +1,19 @@
 ---
-title: This Month in Rust GameDev {{ env.NEWSLETTER_DATE }}
+title: N{{ env.NEWSLETTER_COUNTER}}: This Month in Rust GameDev {{ env.NEWSLETTER_MONTH }} {{ env.NEWSLETTER_YEAR }}
 labels: coordination, help wanted
 ---
 
-# This Month in Rust GameDev {{ env.NEWSLETTER_DATE }}
+# N{{ env.NEWSLETTER_COUNTER}}: This Month in Rust GameDev {{ env.NEWSLETTER_DATE }}
 
 ###### tags: `newsletter`
 
 **Editors:**
 
-Another month has gone by, so it's time to put together the Rust Gamedev newsletter with August's news!
+Another month has gone by, so it's time to put together the Rust Gamedev newsletter with {{ env.NEWSLETTER_MONTH }}'s news!
 
 ## Current Schedule
 
-**The deadline for all section PRs is the 15.{{ env.NEWSLETTER_DEADLINE }}**
+**The deadline for all section PRs is the 05.{{ env.NEWSLETTER_DEADLINE }}**
 
 We _may_ still accept PRs that are submitted later than this, as long as they're ready before the newsletter's release, but this isn't guaranteed. If you want your section to be included, don't leave it till the last minute!
 
