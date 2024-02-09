@@ -11,8 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: echo "TODO=$(date)" >> $GITHUB_ENV
-      - uses: JasonEtco/create-an-issue@v2
+      - name: Increment newsletter number
+        uses:  MandalAutomations/Increment-Environment-Variable@v1
+        with:
+          Name: "NEWSLETTER_NUMBER"
+          EnvironmentName: "default"
+          RepoId: ${{ github.repository_id }}
+          Token: ${{ secrets.PAT_TOKEN }}
+      - name: Set date
+        run: echo "NEWSLETTER_MONTH=$(date)" >> $GITHUB_ENV
+      - name: Create tracking issue
+        uses: JasonEtco/create-an-issue@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

@@ -1,15 +1,12 @@
-+++
-title = "This Month in Rust GameDev #{TODO} - {TODO} {TODO}"
-transparent = true
-date = TODO
-draft = true
-+++
-
+---
+title: N{{ env.NEWSLETTER_NUMBER }}: This Month in Rust GameDev {{ env.NEWSLETTER_MONTH }}
+labels: coordination, help wanted
+---
 <!-- no toc -->
 
 <!-- Check the post with markdownlint-->
 
-Welcome to the {TODO}th issue of the Rust GameDev Workgroup's
+Welcome to the {{ env.NEWSLETTER_NUMBER }}th issue of the Rust GameDev Workgroup's
 monthly newsletter.
 [Rust] is a systems language pursuing the trifecta:
 safety, concurrency, and speed.
@@ -133,4 +130,3 @@ TODO: Add real links and un-comment once this post is published
 
 [/r/rust_gamedev]: https://reddit.com/r/rust_gamedev
 [@rust_gamedev]: https://twitter.com/rust_gamedev
-
