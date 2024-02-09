@@ -1,12 +1,12 @@
 ---
-title: N{{ env.NEWSLETTER_NUMBER }}: This Month in Rust GameDev {{ env.NEWSLETTER_MONTH }}
+title: This Month in Rust GameDev {{ env.NEWSLETTER_DATE }}
 labels: coordination, help wanted
 ---
 <!-- no toc -->
 
 <!-- Check the post with markdownlint-->
 
-Welcome to the {{ env.NEWSLETTER_NUMBER }}th issue of the Rust GameDev Workgroup's
+Welcome to this month's issue of the Rust GameDev Workgroup's
 monthly newsletter.
 [Rust] is a systems language pursuing the trifecta:
 safety, concurrency, and speed.
