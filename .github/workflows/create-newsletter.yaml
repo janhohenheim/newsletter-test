@@ -1,7 +1,7 @@
 name: Create Newsletter Tracking Issue
 on:
   schedule:
-    - cron: "*/1 * * * *"
+    - cron: "5 4 5 * *"
   workflow_dispatch:
     inputs: {}
 permissions:
@@ -12,8 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Set date
-        run: echo "NEWSLETTER_DATE=$(date)" >> $GITHUB_ENV
+      - name: Set template variables
+        run: 
+        echo "NEWSLETTER_DATE=$(date +'%B %Y')" >> $GITHUB_ENV;
+        echo "NEWSLETTER_DEADLINE=$(date -d' 1 month ' '+%m.%Y')" >> $GITHUB_ENV;
+
       - name: Create tracking issue
         uses: JasonEtco/create-an-issue@v2
         env:

@@ -2,131 +2,134 @@
 title: This Month in Rust GameDev {{ env.NEWSLETTER_DATE }}
 labels: coordination, help wanted
 ---
-<!-- no toc -->
 
-<!-- Check the post with markdownlint-->
+# This Month in Rust GameDev {{ env.NEWSLETTER_DATE }}
 
-Welcome to this month's issue of the Rust GameDev Workgroup's
-monthly newsletter.
-[Rust] is a systems language pursuing the trifecta:
-safety, concurrency, and speed.
-These goals are well-aligned with game development.
-We hope to build an inviting ecosystem for anyone wishing
-to use Rust in their development process!
-Want to get involved? [Join the Rust GameDev working group!][join]
+###### tags: `newsletter`
 
-You can follow the newsletter creation process
-by watching [the coordination issues][coordination].
-Want something mentioned in the next newsletter?
-[Send us a pull request][pr].
-Feel free to send PRs about your own projects!
+**Editors:** @ozkriff, @scirin, @AngelOnFira
 
-[Rust]: https://rust-lang.org
-[join]: https://github.com/rust-gamedev/wg#join-the-fun
-[pr]: https://github.com/rust-gamedev/rust-gamedev.github.io
-[coordination]: https://github.com/rust-gamedev/rust-gamedev.github.io/issues?q=label%3Acoordination
+Another month has gone by, so it's time to put together the Rust Gamedev newsletter with August's news!
 
-- [Announcements](#announcements)
-- [Game Updates](#game-updates)
-- [Engine Updates](#engine-updates)
-- [Learning Material Updates](#learning-material-updates)
-- [Tooling Updates](#tooling-updates)
-- [Library Updates](#library-updates)
-- [Other News](#other-news)
-- [Popular Workgroup Issues in Github](#popular-workgroup-issues-in-github)
-- [Meeting Minutes](#meeting-minutes)
-- [Discussions](#discussions)
-- [Requests for Contribution](#requests-for-contribution)
-- [Jobs](#jobs)
-- [Bonus](#bonus)
+## Current Schedule
 
-<!--
-Ideal section structure is:
+**The deadline for all section PRs is the 15.{{ env.NEWSLETTER_DEADLINE }}**
+
+We _may_ still accept PRs that are submitted later than this, as long as they're ready before the newsletter's release, but this isn't guaranteed. If you want your section to be included, don't leave it till the last minute!
+
+## Current Structure & Status
+
+Below is our current planned structure for the newsletter, and the status of each PR (which we'll try to keep updated).
+
+This is **not** an exhaustive list - if you have your own project that you want to write about, just make a comment on this issue and open a PR!
+
+#### Rust Gamedev Meetup
+
+    * [ ]  Details of this month's meetup - 🆓 **free** (@AngelOnFira @ozkriff?)
+
+#### Game Updates
+
+#### Learning Material Updates
+
+#### Engine Updates
+
+#### Tooling Updates
+
+#### Library Updates
+
+#### Other News
+
+    * [ ]  Bullet points of any interesting news that doesn't have its own section - by @ozkrif
+
+#### Discussions
+
+## Publishing Steps
+
+    * [ ]  Final review - by everyone
+
+    * [ ]  Publish - by @ozkriff
+
+    * [ ]  Post on /r/rust, /r/rust_gamedev, /r/gamedev, URLO, twitter.com/rust_gamedev - by @ozkriff
+
+    * [ ]  Pin thread on Twitter - by @ozkriff
+
+    * [ ]  Add comment links - by @ozkriff
+
+    * [ ]  Add a draft of next month's newsletter - by @ozkriff
+
+## How to Contribute
+
+If you want to help writing the newsletter:
+
+    * **Read [CONTRIBUTING.md](https://github.com/rust-gamedev/rust-gamedev.github.io/blob/source/CONTRIBUTING.md?rgh-link-date=2023-09-12T16%3A17%3A34Z).**
+
+    * Choose one or more of the "🆓 **free**" sections listed below, and leave a comment letting us know you want to work on them.
+      
+      * The links in brackets (like "[1](#), [2](#), [3](#)") are suggestions of links to include in the section. Feel free to add more!
+      * The username listed next to the section (like "@ozkriff?") is a suggestion of who may want to pick up the work (usually the project's developer, or someone who has expressed interest in the past).
+      * You are not obligated to write a section if you're tagged or your project is listed! You're welcome to ask someone else to write the section, or to ask for your project to be excluded from this month's post.
+      * Extra sections not listed in the plan are welcomed - just leave a comment and open a PR!
+
+    * Write a short overview in the newsletter's Markdown file, making sure to follow the style guidelines (see below).
+
+    * Send a PR _to the `source` branch_ (example: [N15: A/B Street #336](https://github.com/rust-gamedev/rust-gamedev.github.io/pull/336)).
+
+    * Mention this issue in your PR's description to link it all together.
+
+## Style Guidelines
+
+The full style guide is in [CONTRIBUTING.md](https://github.com/rust-gamedev/rust-gamedev.github.io/blob/source/CONTRIBUTING.md?rgh-link-date=2023-09-12T16%3A17%3A34Z), but here are the most important rules:
+
+    * Write in third-person perspective.
+
+    * Each line must be 80 characters or less, for ease of reviewing/diffing.
+
+    * Only one image per section is allowed.
+      
+      * The maximum size is 300kb for static images and 2.5mb for GIFs.
+      * The image should come before the text, and must have alt text for accessibility.
+      * Prefer static images to GIFs, to keep the page load times down.
+
+    * Each section should be under 1000 characters, and under 6 paragraphs.
+      
+      * This only applies to the rendered text, not the markup.
+
+    * Keep formatting minimal - no bold/italics/etc.
+
+    * Avoid long/nested bullet point lists - no changelogs!
+
+Please use these templates as a starting point:
+
+**Games/apps/libraries:**
 
 ```
-### [Title]
+### [Game name]
 
-![image/GIF description](image link)
-_image caption_
+![alt text](img)
+_optional image label_
 
-A paragraph or two with a summary and [useful links].
+[Game name] ([GitHub], [Discord], [Twitter]) by [@nickname]
+is... {short project description in one sentence}.
 
-_Discussions:
-[/r/rust](https://reddit.com/r/rust/todo),
-[twitter](https://twitter.com/todo/status/123456)_
+{An overview of the recent updates with links to more details}.
 
-[Title]: https://first.link
-[useful links]: https://other.link
+_Discussions: [/r/rust_gamedev](link), [Twitter](link), [etc](link)_
+
+[Game name]: http://example.com
 ```
 
-If needed, a section can be split into subsections with a "------" delimiter.
--->
+**Articles/blog posts/videos/etc:**
 
-## Announcements
+```
+### [Article name]
 
-## Game Updates
+![alt text](img)
+_optional image label_
 
-## Engine Updates
+[@nickname] published an [article] about...
+{overview what the resource is about}.
 
-## Learning Material Updates
+_Discussions: [/r/rust_gamedev](link), [Twiter](link), [etc](link)_
 
-## Tooling Updates
-
-## Library Updates
-
-## Popular Workgroup Issues in Github
-
-<!-- Up to 10 links to interesting issues -->
-
-## Other News
-
-<!-- One-liners for plan items that haven't got their own sections. -->
-
-## Meeting Minutes
-
-<!-- Up to 10 most important notes + a link to the full details -->
-
-[See all meeting issues][label_meeting] including full text notes
-or [join the next meeting][join].
-
-[label_meeting]: https://github.com/rust-gamedev/wg/issues?q=label%3Ameeting
-
-## Discussions
-
-<!-- Links to handpicked reddit/twitter/urlo/etc threads that provide
-useful information -->
-
-## Requests for Contribution
-
-<!-- Links to "good first issue"-labels or direct links to specific tasks -->
-
-## Jobs
-
-<!-- An optional section for new jobs related to Rust gamedev -->
-
-## Bonus
-
-<!-- Bonus section to make the newsletter more interesting
-and highlight events from the past. -->
-
-------
-
-That's all news for today, thanks for reading!
-
-Want something mentioned in the next newsletter?
-[Send us a pull request][pr].
-
-Also, subscribe to [@rust_gamedev on Twitter][@rust_gamedev]
-or [/r/rust_gamedev subreddit][/r/rust_gamedev] if you want to receive fresh news!
-
-<!--
-TODO: Add real links and un-comment once this post is published
-**Discuss this post on**:
-[/r/rust_gamedev](TODO),
-[Mastodon](TODO),
-[Twitter](TODO),
-[Discord](https://discord.gg/yNtPTb2).
--->
-
-[/r/rust_gamedev]: https://reddit.com/r/rust_gamedev
-[@rust_gamedev]: https://twitter.com/rust_gamedev
+[Article name]: http://example.com
+```
