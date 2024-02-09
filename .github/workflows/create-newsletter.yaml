@@ -1,6 +1,7 @@
 name: Create Newsletter Tracking Issue
 on:
   schedule:
+    # Run on the 5th of every month at 12pm
     - cron: "0 12 5 * *"
   workflow_dispatch:
     inputs: {}
@@ -14,7 +15,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Set newsletter month
         run: echo "NEWSLETTER_MONTH=$(date +'%B')" >> $GITHUB_ENV
-      - name : Set newsletter year
+      - name: Set newsletter year
         run: echo "NEWSLETTER_YEAR=$(date +'%Y')" >> $GITHUB_ENV
       - name: Set newsletter deadline
         run: echo "NEWSLETTER_DEADLINE=$(date -d' 1 month ' '+%m.%Y')" >> $GITHUB_ENV
