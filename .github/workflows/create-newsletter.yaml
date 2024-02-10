@@ -29,6 +29,10 @@ jobs:
           sed -i "s/{{\s*NEWSLETTER_COUNTER\s*}}/${{ env.NEWSLETTER_COUNTER }}/g" index.md
           # Rename to the counter with 3 digits
           mv index.md $(printf "%03d" ${{ env.NEWSLETTER_COUNTER }}).md
+      - name: Commit and push changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: "Create newsletter N${{ env.NEWSLETTER_COUNTER }} for ${{ env.NEWSLETTER_MONTH }} ${{ env.NEWSLETTER_YEAR }}"
       - name: Create tracking issue
         uses: JasonEtco/create-an-issue@v2
         env:
