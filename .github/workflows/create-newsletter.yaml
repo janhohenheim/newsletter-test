@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs: {}
 permissions:
-  contents: read, write
+  contents: write
   issues: write 
 jobs:
   create-newsletter:
@@ -27,8 +27,9 @@ jobs:
           sed -i "s/{{\s*NEWSLETTER_YEAR\s*}}/${{ env.NEWSLETTER_YEAR }}/g" index.md
           sed -i "s/{{\s*NEWSLETTER_DEADLINE\s*}}/${{ env.NEWSLETTER_DEADLINE }}/g" index.md
           sed -i "s/{{\s*NEWSLETTER_COUNTER\s*}}/${{ env.NEWSLETTER_COUNTER }}/g" index.md
-          # Rename to the counter with 3 digits
-          mv index.md $(printf "%03d" ${{ env.NEWSLETTER_COUNTER }}).md
+          # Create a dir in content/news with the counter with 3 digits as name
+          mkdir -p content/news/$(printf "%03d" ${{ env.NEWSLETTER_COUNTER }})
+          mv index.md content/news/$(printf "%03d" ${{ env.NEWSLETTER_COUNTER }})
       - name: Commit and push changes
         uses: EndBug/add-and-commit@v9
         with:
