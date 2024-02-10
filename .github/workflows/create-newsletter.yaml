@@ -21,9 +21,7 @@ jobs:
           # take the amount of months since feb 2024 and add 50
           echo "NEWSLETTER_COUNTER=$(( ( ( $(date +'%Y') - 2024 ) * 12 + $(date +'%m') - 2 ) + 50 ))" >> $GITHUB_ENV
       - name: Create newsletter scaffold
-        uses: edgardleal/mustache-template-action@v1.0.0    
-        env:
-          ENV: dev
+        uses: edgardleal/mustache-template-action@v1.0.0
         with:
           input: newsletter-template.md
           output: newsletter.md
