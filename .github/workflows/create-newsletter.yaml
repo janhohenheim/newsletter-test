@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs: {}
 permissions:
-  contents: read
+  contents: read, write
   issues: write 
 jobs:
   create-newsletter:
