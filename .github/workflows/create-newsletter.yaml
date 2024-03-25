@@ -31,9 +31,11 @@ jobs:
           # set destination variable
           destination="content/news/$(printf "%03d" ${{ env.NEWSLETTER_COUNTER }})"
           mkdir -p $destination
-          git status
           mv index.md $destination/index.md
           git add $destination/index.md
+          # debug
+          echo "Destination: $destination"
+          ls -la $destination
           git status
       - name: Commit and push changes
         uses: EndBug/add-and-commit@v9
