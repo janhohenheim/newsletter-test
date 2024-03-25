@@ -30,14 +30,15 @@ jobs:
           # Create a dir in content/news with the counter with 3 digits as name
           mkdir -p content/news/$(printf "%03d" ${{ env.NEWSLETTER_COUNTER }})
           mv index.md content/news/$(printf "%03d" ${{ env.NEWSLETTER_COUNTER }})
+          git add content/news/$(printf "%03d" ${{ env.NEWSLETTER_COUNTER }})/index.md
       - name: Commit and push changes
         uses: EndBug/add-and-commit@v9
         with:
           message: "Create newsletter N${{ env.NEWSLETTER_COUNTER }} for ${{ env.NEWSLETTER_MONTH }} ${{ env.NEWSLETTER_YEAR }}"
-      - name: Create tracking issue
-        uses: JasonEtco/create-an-issue@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          filename: .github/newsletter-issue-template.md
+      #- name: Create tracking issue
+      #  uses: JasonEtco/create-an-issue@v2
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #  with:
+      #    filename: .github/newsletter-issue-template.md
 
