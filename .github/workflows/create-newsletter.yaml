@@ -1,6 +1,6 @@
 name: Create Newsletter
 on:
-  schedule:
+  # schedule:
     # Run on the 5th of every month at 12pm
     # - cron: "0 12 5 * *"
   workflow_dispatch:
@@ -21,15 +21,16 @@ jobs:
           # take the amount of months since feb 2024 and add 50
           echo "NEWSLETTER_COUNTER=$(( ( ( $(date +'%Y') - 2024 ) * 12 + $(date +'%m') - 2 ) + 50 ))" >> $GITHUB_ENV
       - name: Create newsletter scaffold
-        run: ./create_newsletter_scaffold.sh
+        run: ./.github/create_newsletter_scaffold.sh
       - name: Commit and push changes
         uses: EndBug/add-and-commit@v9
         with:
           message: "Create newsletter N${{ env.NEWSLETTER_COUNTER }} for ${{ env.NEWSLETTER_MONTH }} ${{ env.NEWSLETTER_YEAR }}"
-      - name: Create tracking issue
-        uses: JasonEtco/create-an-issue@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          filename: .github/newsletter-issue-template.md
+          push: "origin HEAD:source"
+      #- name: Create tracking issue
+      #  uses: JasonEtco/create-an-issue@v2
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #  with:
+      #    filename: .github/newsletter-issue-template.md
 
