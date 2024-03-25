@@ -31,6 +31,7 @@ jobs:
           mkdir -p content/news/$(printf "%03d" ${{ env.NEWSLETTER_COUNTER }})
           mv index.md content/news/$(printf "%03d" ${{ env.NEWSLETTER_COUNTER }})
           git add content/news/$(printf "%03d" ${{ env.NEWSLETTER_COUNTER }})/index.md
+          git status
       - name: Commit and push changes
         uses: EndBug/add-and-commit@v9
         with:
