@@ -2,7 +2,7 @@ name: Create Newsletter
 on:
   schedule:
     # Run on the 5th of every month at 12pm
-    - cron: "0 12 5 * *"
+    # - cron: "0 12 5 * *"
   workflow_dispatch:
     inputs: {}
 permissions:
@@ -32,19 +32,15 @@ jobs:
           destination="content/news/$(printf "%03d" ${{ env.NEWSLETTER_COUNTER }})"
           mkdir -p $destination
           mv index.md $destination/index.md
-          git add $destination/index.md
-          # debug
-          echo "Destination: $destination"
-          ls -la $destination
           git status
       - name: Commit and push changes
         uses: EndBug/add-and-commit@v9
         with:
           message: "Create newsletter N${{ env.NEWSLETTER_COUNTER }} for ${{ env.NEWSLETTER_MONTH }} ${{ env.NEWSLETTER_YEAR }}"
-      #- name: Create tracking issue
-      #  uses: JasonEtco/create-an-issue@v2
-      #  env:
-      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #  with:
-      #    filename: .github/newsletter-issue-template.md
+      - name: Create tracking issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/newsletter-issue-template.md
 
