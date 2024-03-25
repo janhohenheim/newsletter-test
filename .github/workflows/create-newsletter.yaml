@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: source
       - name: Set environment variables
         run: |
           echo "NEWSLETTER_MONTH=$(date +'%B')" >> $GITHUB_ENV
