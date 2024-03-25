@@ -2,11 +2,6 @@
 
 set -e
 
-if [[ -z "${DEPLOY_ENV}" ]]; then
-  echo "DEPLOY_ENV is not set. Exiting..."
-  exit 1
-fi
-
 if [[ -z "${NEWSLETTER_MONTH}" ]]; then
   echo "NEWSLETTER_MONTH is not set. Exiting..."
   exit 1
