@@ -21,18 +21,7 @@ jobs:
           # take the amount of months since feb 2024 and add 50
           echo "NEWSLETTER_COUNTER=$(( ( ( $(date +'%Y') - 2024 ) * 12 + $(date +'%m') - 2 ) + 50 ))" >> $GITHUB_ENV
       - name: Create newsletter scaffold
-        run: |
-          cp newsletter-template.md index.md
-          sed -i "s/{{\s*NEWSLETTER_MONTH\s*}}/${{ env.NEWSLETTER_MONTH }}/g" index.md
-          sed -i "s/{{\s*NEWSLETTER_YEAR\s*}}/${{ env.NEWSLETTER_YEAR }}/g" index.md
-          sed -i "s/{{\s*NEWSLETTER_DEADLINE\s*}}/${{ env.NEWSLETTER_DEADLINE }}/g" index.md
-          sed -i "s/{{\s*NEWSLETTER_COUNTER\s*}}/${{ env.NEWSLETTER_COUNTER }}/g" index.md
-          # Create a dir in content/news with the counter with 3 digits as name
-          # set destination variable
-          destination="content/news/$(printf "%03d" ${{ env.NEWSLETTER_COUNTER }})"
-          mkdir -p $destination
-          mv index.md $destination/index.md
-          git status
+        run: ./create_newsletter_scaffold.sh
       - name: Commit and push changes
         uses: EndBug/add-and-commit@v9
         with:
